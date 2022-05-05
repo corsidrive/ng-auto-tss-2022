@@ -1,27 +1,47 @@
-# Auto
+# Angular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.6.
+## Installazione programmi necessari
 
-## Development server
+### node js
+[node](https://nodejs.org/en/download/)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+LTS - Long term support
 
-## Code scaffolding
+### angular cli
+[angular sito ufficiale](https://angular.io/cli)
+angular cli 
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```bash
+npm install -g @angular/cli
+```
 
-## Build
+creazione di un  nuovo progetto
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+```
+ng new [nome applicazione]
+ng new auto
 
-## Running unit tests
+cd auto
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+aprire vscode dentro la cartella del progetto
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+SPA single page application
 
-## Further help
+Routing (instradamento) 
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+Componente ---> tag personalizzato
+
+Componente ---> Calendario 
+
+AppComponent
+    - CalendarComponent
+    - AutoComponent
+
+AutoComponent
+    - auto.component.html
+    - auto.component.css
+    - auto.component.ts
+    - auto.component.spec.ts
