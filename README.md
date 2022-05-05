@@ -45,3 +45,8 @@ AutoComponent
     - auto.component.css
     - auto.component.ts
     - auto.component.spec.ts
+
+
+controlare la proprietà style
+
+https://angular.io/guide/attribute-binding#binding-to-the-style-attribute
