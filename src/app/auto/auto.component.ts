@@ -36,8 +36,8 @@ export class AutoComponent implements OnInit {
     return 'hue-rotate('+ this.colore + ')'
   }
 
-  avanti():number {
-    return this.posizione += this.velocita; 
+  avanti() {
+    this.posizione += this.velocita; 
   }
 
 }
