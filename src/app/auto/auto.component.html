@@ -1,0 +1,16 @@
+<div class="auto" [style.left]="posizione+'px'"   (click)="avanti()" >
+    <div class="nome-auto">
+        {{nome}}
+    </div>
+    <div class="posizione">
+        {{posizione}}
+    </div>
+    <img  [style.filter]="getColor()"    src="/assets/car.png" alt="">   
+</div>
+
+
+<!--  filter: hue-rotate(45deg); -->
+<!-- 
+    var el =document.getelemntbyId('inmg')
+    el.style.filter = 'hue-rotate(45deg)';
+-->
