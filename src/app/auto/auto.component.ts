@@ -9,6 +9,9 @@ import { Component,   Input,   OnInit } from '@angular/core';
 })
 export class AutoComponent implements OnInit {
 
+  @Input()
+  public velocita:number = 10
+
   public posizione:number = 0;
   
   @Input()
@@ -34,7 +37,7 @@ export class AutoComponent implements OnInit {
   }
 
   avanti():number {
-    return this.posizione += 10; 
+    return this.posizione += this.velocita; 
   }
 
 }
