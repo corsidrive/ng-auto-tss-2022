@@ -1,4 +1,5 @@
-import { Component,   Input,   OnInit } from '@angular/core';
+import { Component,   EventEmitter,   Input,   OnInit, Output } from '@angular/core';
+
 
 @Component({
   // p --> <p>
@@ -11,7 +12,6 @@ export class AutoComponent implements OnInit {
 
   @Input()
   public velocita:number = 10
-
   public posizione:number = 0;
   
   @Input()
@@ -19,6 +19,8 @@ export class AutoComponent implements OnInit {
   
   @Input()
   public nome:string = "";
+
+  @Output() onPositionChange:EventEmitter<any>  = new EventEmitter();
 
   constructor() { 
     console.log("posizione",this.posizione)
@@ -38,6 +40,7 @@ export class AutoComponent implements OnInit {
 
   avanti() {
     this.posizione += this.velocita; 
+    this.onPositionChange.emit(this.posizione)
   }
 
 }

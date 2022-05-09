@@ -1,10 +1,19 @@
-<app-auto nome="Panda" [velocita]="200 + 10" colore="45deg" ></app-auto>
-<app-auto nome="Punto"  ></app-auto>
-<app-auto nome="DMC" [velocita]="-30" colore="100deg"></app-auto>
+{{title}}
 
-<!-- 
+<pre>
+    {{piloti|json}}
+</pre>
+    <h1>Sono la pista</h1>
+<div class="pista">
 
-    var velocita:number = "200"
-    [] --> var velocita:number = 200 + 10 
-    
--->
+    <app-auto (onPositionChange)="controllaPosizione()"   
+             *ngFor="let pilota of piloti"
+              
+              [colore]="pilota.colore" 
+              [nome]="pilota.nome" 
+              [velocita]="pilota.potenza"
+              >
+
+    </app-auto>
+
+</div>

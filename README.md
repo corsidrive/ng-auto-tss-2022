@@ -92,3 +92,22 @@ https://angular.io/guide/inputs-outputs
 
 
 @Input() nome:string = "";
+
+Differnza tra
+```html
+var attributo = 1+1;  // 2
+
+<tag [attributo] = "1+1" > //  2
+    <tag attributo = "{{1+1}}" > // 2
+        <tag attributo = "1+1" > // "1+1"
+            <p>1+1</p>
+<tag>1+1</tag>
+<tag>{{1+1}}</tag> // 2
+
+var attributo = 'rosso-'+ 2
+<tag [attributo] = "'rosso-'+2" > //  
+<tag>
+    {{'rosso-'+2}} ---> <tag>"rosso-2"</tag>
+</tag>
+
+```
