@@ -40,7 +40,7 @@ export class AutoComponent implements OnInit {
 
   avanti() {
     this.posizione += this.velocita; 
-    this.onPositionChange.emit(this.posizione)
+    this.onPositionChange.emit(this)
   }
 
 }

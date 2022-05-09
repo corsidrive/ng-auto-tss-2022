@@ -6,7 +6,7 @@
     <h1>Sono la pista</h1>
 <div class="pista">
 
-    <app-auto (onPositionChange)="controllaPosizione()"   
+    <app-auto (onPositionChange)="controllaPosizione($event)"   
              *ngFor="let pilota of piloti"
               
               [colore]="pilota.colore" 

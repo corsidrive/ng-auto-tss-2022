@@ -26,8 +26,9 @@ export class AppComponent {
     },
   ]
 
-  controllaPosizione(){
-    alert("una macchina si è mossa");
+  controllaPosizione(info:any){
+    // alert("una macchina si è mossa");
+    console.log("l'auto di " + info.nome + "è nella posizone" + info.posizione);
   }
 
 }
