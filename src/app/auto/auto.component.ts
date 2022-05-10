@@ -23,14 +23,14 @@ export class AutoComponent implements OnInit {
   @Output() onPositionChange:EventEmitter<any>  = new EventEmitter();
 
   constructor() { 
-    console.log("posizione",this.posizione)
-    console.log("costruttore",this.nome)
+    //console.log("posizione",this.posizione)
+    //console.log("costruttore",this.nome)
   }
 
   /** hook */
   ngOnInit(): void {
-    console.log("init",this.nome)
-    console.log("colore",this.colore)
+    //console.log("init",this.nome)
+    //console.log("colore",this.colore)
   }
 
   getColor(){
