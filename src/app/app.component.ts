@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { PosizioneService } from './posizione.service';
 
 @Component({
   selector: 'app-root',
@@ -8,49 +9,23 @@ import { Component } from '@angular/core';
 
 export class AppComponent {
   title = 'auto';
-  piloti = [
-    {
-      "nome":"Mario",
-      "colore":"45deg",
-      "potenza":40
-    },
-    {
-      "nome":"Luigi",
-      "colore":"85deg",
-      "potenza":30
-    },
-    {
-      "nome":"Ciccio",
-      "colore":"185deg",
-      "potenza":130
-    },
-  ];
-  public posizioniGriglia:Array<any> = []
   
-  constructor(){
+  public posizioniGriglia:Array<any> = []
+  public piloti;
+  // public posizione:PosizioneService; 
+
+
+  // Design pattern Dependecy Injection 
+  constructor(public posizioneService:PosizioneService){
     // per ogni pilota 
-    this.posizioniGriglia = this.piloti.map((pilota:any)=>{
-        return {
-          "nome": pilota.nome,
-          "posizione":0
-        }
-      })
-      console.log(this.posizioniGriglia)
+    // this.posizione= new PosizioneService();
+    this.piloti = this.posizioneService.getPiloti();
+    this.posizioniGriglia = this.posizioneService.creaGriglia()
   }
 
 
   controllaPosizione(info:any){
-    // alert("una macchina si è mossa");
-    console.log("l'auto di " + info.nome + "è nella posizone" + info.posizione);
-
-     this.posizioniGriglia.find((pilota)=>{
-
-    })
-
-
-    // clalcoliamo chi è in testa
-  
-
+   
   }
 
 }
