@@ -45,22 +45,6 @@ export class PosizioneService {
 
 
   getPiloti(){
-    return [
-      {
-        nome:"Mario",
-        "colore":"45deg",
-        "potenza":40
-      },
-      {
-        "nome":"Luigi",
-        "colore":"85deg",
-        "potenza":30
-      },
-      {
-        "nome":"Ciccio",
-        "colore":"185deg",
-        "potenza":130
-      },
-    ];
+    // HTTPClient --_>
   }
 }
