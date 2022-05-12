@@ -1,19 +1,17 @@
-{{title}}
+<section class="game">
 
-<pre>
-   
-</pre>
-    <h1>Sono la pista</h1>
-<div class="pista">
+    <div class="pista">
 
-    <app-auto (onPositionChange)="controllaPosizione($event)"   
-             *ngFor="let pilota of piloti"
-              
-              [colore]="pilota.colore" 
-              [nome]="pilota.nome" 
-              [velocita]="pilota.potenza"
-              >
+        <app-auto (onPositionChange)="controllaPosizione($event)" *ngFor="let pilota of piloti" 
+            [colore]="pilota.colore"
+            [nome]="pilota.nome" 
+            [velocita]="pilota.potenza">
 
-    </app-auto>
+        </app-auto>
 
-</div>
+    </div>
+    <div class="classifica">
+            
+            <classifica  [posizioniInGriglia]="posizioniGriglia">  </classifica>
+    </div>
+</section>

@@ -38,11 +38,16 @@ export class PosizioneService {
 
     return this.posizioniGriglia;
   }
+  ordinaPosizioni(){
+    
+  }
+
+
 
   getPiloti(){
     return [
       {
-        "nome":"Mario",
+        nome:"Mario",
         "colore":"45deg",
         "potenza":40
       },

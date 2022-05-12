@@ -25,7 +25,8 @@ export class AppComponent {
 
 
   controllaPosizione(info:any){
-   
+    console.log(info)
+
   }
 
 }

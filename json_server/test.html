@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chiamate HTTP con JS ES6</title>
+</head>
+<body>
+
+    <div id="piloti">ciccio </div>
+
+    <script>
+        const promessa = fetch('http://localhost:3000/piloti')
+        // callback --> funzione passata come argomento
+        // somma(4,5,function(risultato){}) 
+        promessa.then((response ) => {
+            // Promessa    
+            const promessaJSON = response.json()
+            
+            promessaJSON.then((jsonDATA ) => {
+                console.log(jsonDATA)
+
+                const html = jsonDATA.map((pilota)=>{
+                                return "<b>"+pilota.nome+"</b>"
+                }).join("<hr>")
+
+                console.log(html);
+
+
+                document.getElementById('piloti').innerHTML = html
+            })
+
+            console.log(promessaJSON);
+        })
+    </script>
+</body>
+</html>

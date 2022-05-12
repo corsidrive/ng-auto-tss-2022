@@ -1,0 +1,17 @@
+{
+    "piloti":[
+        {
+        "id":1,    
+        "nome":"Mario",
+        "colore":"20deg",
+        "potenza": 20
+        },
+        {
+        "id":2,    
+        "nome":"Luigi",
+        "colore":"20deg",
+        "potenza": 20
+        }
+    ],
+    "classifica":[]
+}
