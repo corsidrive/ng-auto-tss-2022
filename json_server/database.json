@@ -3,19 +3,19 @@
         {
         "id":1,    
         "nome":"Mario",
-        "colore":"20deg",
-        "potenza": 20
+        "colore":"40deg",
+        "potenza": 200
         },
         {
         "id":2,    
         "nome":"Luigi",
-        "colore":"20deg",
-        "potenza": 20
+        "colore":"60deg",
+        "potenza": 50
         },
         {
         "id":3,    
         "nome":"Luigi",
-        "colore":"20deg",
+        "colore":"90deg",
         "potenza": 20
         },
         {

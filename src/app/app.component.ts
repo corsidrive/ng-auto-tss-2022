@@ -13,13 +13,20 @@ export class AppComponent {
   public posizioniGriglia:Array<any> = []
   public piloti:any[] = [];
 
+  public nomeCircuito = "Le mans";
   constructor(public posizioneService:PosizioneService){
-      posizioneService.subscribe()
-    
+     
+   this.posizioneService.getPiloti().subscribe((piloti)=>{
+              // QUESTO E' IL MOMENTO DOVE I PILOTI SONO DISPONIBILI
+              this.piloti = piloti
+              this.posizioniGriglia = this.posizioneService.creaGriglia(piloti)
+              
+         }) 
   }
 
-  controllaPosizione(info:any){
-    
+  controllaPosizione(info:any){ 
+     // c = c+1  
+      this.posizioniGriglia = this.posizioneService.aggiornaGriglia(info,this.posizioniGriglia)
   }
 
 }
