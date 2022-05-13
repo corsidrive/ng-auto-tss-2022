@@ -12,20 +12,14 @@ export class AppComponent {
   
   public posizioniGriglia:Array<any> = []
   public piloti:any[] = [];
-  // public posizione:PosizioneService; 
 
-
-  // Design pattern Dependecy Injection 
   constructor(public posizioneService:PosizioneService){
 
     
   }
 
-
   controllaPosizione(info:any){
     
-   
-
   }
 
 }

@@ -10,7 +10,7 @@ export class PosizioneService {
   constructor(public http:HttpClient ) { }
 
   public creaGriglia(piloti:any[]){
-    // function () {}
+    
     const posizioniGriglia = piloti.map((pilota:any)=>{
         return {
           "nome":pilota.nome,
