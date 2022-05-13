@@ -11,7 +11,7 @@ export class AppComponent {
   title = 'auto';
   
   public posizioniGriglia:Array<any> = []
-  public piloti;
+  public piloti:any[] = [];
   // public posizione:PosizioneService; 
 
 
@@ -19,8 +19,13 @@ export class AppComponent {
   constructor(public posizioneService:PosizioneService){
     // per ogni pilota 
     // this.posizione= new PosizioneService();
-    this.piloti = this.posizioneService.getPiloti();
-    this.posizioniGriglia = this.posizioneService.creaGriglia()
+    this.posizioneService.getPiloti()
+                  .subscribe((_piloti) => {
+                    this.piloti = _piloti
+                    this.posizioneService.creaGriglia()
+
+                  })
+
   }
 
 

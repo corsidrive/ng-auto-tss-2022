@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -7,20 +9,22 @@ export class PosizioneService {
 
   private posizioniGriglia:any[]=[];
 
-  constructor() { }
+  constructor(public http:HttpClient ) { }
 
   creaGriglia(){
-    const piloti = this.getPiloti()
-
-    // function () {}
-    this.posizioniGriglia = piloti.map((pilota:any)=>{
+    this.getPiloti().subscribe((_piloti)=>{
+      
+      const piloti = _piloti
+    
+      this.posizioniGriglia = piloti.map((pilota:any)=>{
         return {
           "nome":pilota.nome,
           "posizione":0
         }
-    })
+      })
 
-    return this.posizioniGriglia
+    })
+    
   }
 
   /**
@@ -42,9 +46,7 @@ export class PosizioneService {
     
   }
 
-
-
-  getPiloti(){
-    // HTTPClient --_>
+  getPiloti():Observable<any> {
+      return this.http.get('http://localhost:3000/piloti')
   }
 }

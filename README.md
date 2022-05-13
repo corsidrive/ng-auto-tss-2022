@@ -1,3 +1,8 @@
+- [ ] in quante occasioni viene utilizzato get piloti
+- [ ] per valorizzare  cosa
+
+
+
 # Angular
 
 dopo che avete scaricato lo zip 
