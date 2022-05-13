@@ -14,7 +14,7 @@ export class AppComponent {
   public piloti:any[] = [];
 
   constructor(public posizioneService:PosizioneService){
-
+      posizioneService.subscribe()
     
   }
 
