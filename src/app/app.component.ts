@@ -17,20 +17,23 @@ export class AppComponent {
 
   // Design pattern Dependecy Injection 
   constructor(public posizioneService:PosizioneService){
-    // per ogni pilota 
-    // this.posizione= new PosizioneService();
+
+    /** 
+     * nell'appicazione principale ho bisogno dei piloti per inizializzare il gioco
+     */
     this.posizioneService.getPiloti()
                   .subscribe((_piloti) => {
+
+                    console.log("ottengo piloti: --> ",_piloti)
                     this.piloti = _piloti
-                    this.posizioneService.creaGriglia()
-
+                    this.posizioniGriglia = this.posizioneService.creaGriglia(_piloti)
                   })
-
   }
 
 
   controllaPosizione(info:any){
-    console.log(info)
+    
+    this.posizioniGriglia = this.posizioneService.aggiornaGriglia(info)
 
   }
 

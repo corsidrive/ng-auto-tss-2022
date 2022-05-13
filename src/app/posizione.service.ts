@@ -11,20 +11,21 @@ export class PosizioneService {
 
   constructor(public http:HttpClient ) { }
 
-  creaGriglia(){
-    this.getPiloti().subscribe((_piloti)=>{
-      
-      const piloti = _piloti
+  
+  
+  
+  public creaGriglia(piloti:any[]){
     
-      this.posizioniGriglia = piloti.map((pilota:any)=>{
+    
+  const posizioniGriglia = piloti.map((pilota:any)=>{
         return {
           "nome":pilota.nome,
           "posizione":0
         }
       })
 
-    })
-    
+    this.posizioniGriglia = posizioniGriglia  
+    return posizioniGriglia;
   }
 
   /**
@@ -32,14 +33,13 @@ export class PosizioneService {
    * @param info 
    */
   aggiornaGriglia(info:any){
-
-    const indiceTrovato = this.posizioniGriglia.findIndex( 
-      (pilotaInGligia) => {
+    console.log("info",info.nome,info.posizione);
+    const indiceTrovato = this.posizioniGriglia.findIndex((pilotaInGligia) => {
         return info.nome === pilotaInGligia.nome
-      })
-    
+    })
+    console.log(this.posizioniGriglia,"trovato in classifica;",this.posizioniGriglia[indiceTrovato]);
     this.posizioniGriglia[indiceTrovato].posizione = info.posizione
-
+      console.log("this.posizioniGriglia",this.posizioniGriglia)
     return this.posizioniGriglia;
   }
   ordinaPosizioni(){
