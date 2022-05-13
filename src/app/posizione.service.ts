@@ -7,43 +7,28 @@ import { Observable } from 'rxjs';
 })
 export class PosizioneService {
 
-  private posizioniGriglia:any[]=[];
-
   constructor(public http:HttpClient ) { }
 
-  
-  
-  
   public creaGriglia(piloti:any[]){
-    
-    
-  const posizioniGriglia = piloti.map((pilota:any)=>{
+    // function () {}
+    const posizioniGriglia = piloti.map((pilota:any)=>{
         return {
           "nome":pilota.nome,
           "posizione":0
         }
-      })
-
-    this.posizioniGriglia = posizioniGriglia  
-    return posizioniGriglia;
+    })
+    return posizioniGriglia
   }
 
   /**
    * info.nome  è il nome della posizione che deve essere aggiornata
    * @param info 
    */
-  aggiornaGriglia(info:any){
-    console.log("info",info.nome,info.posizione);
-    const indiceTrovato = this.posizioniGriglia.findIndex((pilotaInGligia) => {
+  aggiornaGriglia(info:any,posizioniGriglia:any) {
+    const indiceTrovato = posizioniGriglia.findIndex((pilotaInGligia:any) => {
         return info.nome === pilotaInGligia.nome
     })
-    console.log(this.posizioniGriglia,"trovato in classifica;",this.posizioniGriglia[indiceTrovato]);
-    this.posizioniGriglia[indiceTrovato].posizione = info.posizione
-      console.log("this.posizioniGriglia",this.posizioniGriglia)
-    return this.posizioniGriglia;
-  }
-  ordinaPosizioni(){
-    
+    posizioniGriglia[indiceTrovato].posizione = info.posizione
   }
 
   getPiloti():Observable<any> {
